@@ -1,3 +1,7 @@
+// ------------------------------ //
+//  SECTION 1 - GETTING STARTED   //
+// ------------------------------ //
+
 /*
 const btn = document.querySelector("button")! as HTMLButtonElement;
 const input_1 = document.getElementById("num1")! as HTMLInputElement;
