@@ -19,6 +19,10 @@ npm install
 ```
 
 ## Compiling TypeScript
+
+* Compiling a single TypeScript file.
 ```
 tsc app.ts
 ```
+
+* More on TypeScript compiler in [Section 3 - TypeScript Compiler](https://github.com/sidneyshafer/TypeScript/tree/main/Section-3-TypeScript-Compiler).
