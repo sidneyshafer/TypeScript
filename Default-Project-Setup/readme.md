@@ -26,6 +26,10 @@ npm install --save-dev lite-server
 * **package.json** is already configured. Conversely, just run `npm install` with package.json in project folder.
 
 ## Compiling TypeScript
+
+* Compiling a single TypeScript file.
 ```
 tsc app.ts
 ```
+
+* More on TypeScript compiler in [Section 3 - TypeScript Compiler](https://github.com/sidneyshafer/TypeScript/tree/main/Section-3-TypeScript-Compiler).
