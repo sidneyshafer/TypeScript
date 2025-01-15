@@ -2,7 +2,7 @@
 
 ## JavaScript - Declaring Variables
 
-* In JavaScript, `var`, `let`, and `const` are used to declare variables, but they differ in their scope and reassignment behavior.
+In JavaScript, `var`, `let`, and `const` are used to declare variables, but they differ in their scope and reassignment behavior.
 
 **var**
 * Limited to global or function scope. 
