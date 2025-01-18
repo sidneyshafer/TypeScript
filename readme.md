@@ -1,6 +1,6 @@
 # Understanding TypeScript
 
-## [Default Project Setup](https://github.com/sidneyshafer/TypeScript/tree/main/Default-Project-Setup)
+## :link: [Default Project Setup](https://github.com/sidneyshafer/TypeScript/tree/main/Default-Project-Setup)
 
 ### Configuring Project Dependencies
 
