@@ -1,2 +1,6 @@
 "use strict";
-console.log('Some cool stuff is going on...');
+const e1 = {
+    name: 'Sidney',
+    privileges: ['create', 'delete'],
+    startDate: new Date()
+};
