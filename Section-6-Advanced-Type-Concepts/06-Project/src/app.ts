@@ -22,7 +22,11 @@ type Numeric = number | boolean;
 
 type Universal = Combinable & Numeric;
 
-// Type Guards
+// Type Guards & Function Overloads
+function add(a: number, b: number): number; // Function Overload
+function add(a: string, b: string): string; // Function Overload
+function add(a: string, b: number): string; // Function Overload
+function add(a: number, b: string): string; // Function Overload
 function add(a: Combinable, b: Combinable) {
     // Type Guards
     if(typeof a === 'string' || typeof b === 'string') {
@@ -30,6 +34,10 @@ function add(a: Combinable, b: Combinable) {
     }
     return a + b;
 }
+
+// const result = add('Sidney', 'Shafer') as string; // Can use Type Casting (over function overload)
+const result = add('Sidney', 'Shafer');
+result.split(' ');
 
 type UnknownEmployee = Employee | Admin;
 

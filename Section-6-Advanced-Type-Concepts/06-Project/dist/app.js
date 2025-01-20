@@ -4,7 +4,6 @@ const e1 = {
     privileges: ['create', 'delete'],
     startDate: new Date()
 };
-// Type Guards
 function add(a, b) {
     // Type Guards
     if (typeof a === 'string' || typeof b === 'string') {
@@ -12,6 +11,9 @@ function add(a, b) {
     }
     return a + b;
 }
+// const result = add('Sidney', 'Shafer') as string; // Can use Type Casting (over function overload)
+const result = add('Sidney', 'Shafer');
+result.split(' ');
 function printEmployeeInformation(emp) {
     console.log('Name: ' + emp.name);
     // More on Type Guards
