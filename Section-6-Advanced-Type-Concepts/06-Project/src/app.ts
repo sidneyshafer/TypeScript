@@ -125,3 +125,15 @@ userInputEl.value = 'Hello World!';
 // if(inputEl) {
 //     (inputEl as HTMLInputElement).value = 'Hello World!';
 // }
+
+// Index Properties
+// Want flexible container
+interface ErrorContainer { // { email: 'Not a valid email', username: 'Must start with...' }
+    //id: string; // cannot be number
+    [prop: string]: string;
+}
+
+const errorBag: ErrorContainer = {
+    email: 'Not a valid email.',
+    username: 'Must start with an uppercase character',
+};

@@ -69,8 +69,7 @@ const paragraphEl = document.getElementById('message-output'); // TypeScript inf
 //const userInputEl = <HTMLInputElement>document.getElementById('user-input')!; // '!' - tell TypeScript it will not be null; define element Type
 const userInputEl = document.getElementById('user-input'); // Same as above; cast type to specific HTML element type
 userInputEl.value = 'Hello World!';
-// Another way of type casting
-// const inputEl = document.getElementById('user-input');
-// if(inputEl) {
-//     (inputEl as HTMLInputElement).value = 'Hello World!';
-// }
+const errorBag = {
+    email: 'Not a valid email.',
+    username: 'Must start with an uppercase character',
+};
