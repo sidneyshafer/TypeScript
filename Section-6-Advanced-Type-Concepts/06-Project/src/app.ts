@@ -51,6 +51,13 @@ const fetchedUserData = {
 // TypeScript way of checking if property exists - using optional chaining operator (?)
 console.log(fetchedUserData?.job?.title);
 
+// Nullish Coalescing - double question mark (null or undefined); Not empty string or zero
+const userInput = null;
+// const userInput = '';
+
+const storedData = userInput ?? 'DEFAULT';
+console.log(storedData);
+
 type UnknownEmployee = Employee | Admin;
 
 function printEmployeeInformation(emp: UnknownEmployee) {
