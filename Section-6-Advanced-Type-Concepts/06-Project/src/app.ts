@@ -39,6 +39,18 @@ function add(a: Combinable, b: Combinable) {
 const result = add('Sidney', 'Shafer');
 result.split(' ');
 
+// Optional Chaining
+const fetchedUserData = {
+    id: 'u1',
+    name: 'Sidney',
+    job: { title: 'CEO', description: 'My company' }
+}
+
+// console.log(fetchedUserData.job.title && fetchedUserData.job.title); // JS way of checking if property exists
+
+// TypeScript way of checking if property exists - using optional chaining operator (?)
+console.log(fetchedUserData?.job?.title);
+
 type UnknownEmployee = Employee | Admin;
 
 function printEmployeeInformation(emp: UnknownEmployee) {

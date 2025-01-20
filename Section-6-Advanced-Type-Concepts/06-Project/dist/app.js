@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 const e1 = {
     name: 'Sidney',
     privileges: ['create', 'delete'],
@@ -14,6 +15,15 @@ function add(a, b) {
 // const result = add('Sidney', 'Shafer') as string; // Can use Type Casting (over function overload)
 const result = add('Sidney', 'Shafer');
 result.split(' ');
+// Optional Chaining
+const fetchedUserData = {
+    id: 'u1',
+    name: 'Sidney',
+    job: { title: 'CEO', description: 'My company' }
+};
+// console.log(fetchedUserData.job.title && fetchedUserData.job.title); // JS way of checking if property exists
+// TypeScript way of checking if property exists - using optional chaining operator (?)
+console.log((_a = fetchedUserData === null || fetchedUserData === void 0 ? void 0 : fetchedUserData.job) === null || _a === void 0 ? void 0 : _a.title);
 function printEmployeeInformation(emp) {
     console.log('Name: ' + emp.name);
     // More on Type Guards
