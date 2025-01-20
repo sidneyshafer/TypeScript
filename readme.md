@@ -173,3 +173,16 @@ In JavaScript, `var`, `let`, and `const` are used to declare variables, but they
 * Classes - *"Blueprints for objects" (theoretical definition)"*
     * Define how objects look like, which properties and methods they have.
     * Classes make creation of multiple, similar objects much easier.
+
+## :link: [Section 6 - Advanced Type Concepts](https://github.com/sidneyshafer/TypeScript/tree/main/Section-6-Advanced-Type-Concepts)
+
+### Concepts
+
+* Intersection Types
+* Type Guards
+* Discriminated Unions
+* Type Casting
+* Index Properties
+* Function Overloads
+* Optional Chaining
+* Nullish Coalescing
