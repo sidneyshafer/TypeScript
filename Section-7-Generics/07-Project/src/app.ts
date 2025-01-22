@@ -13,12 +13,12 @@ promise.then(data => {
     data.split(' ');
 });
 
-// Creating a Generic Function
-function merge<T extends Object, U>(objA: T, objB: U) {
+// Creating a Generic Function & Working with constraints
+function merge<T extends object, U extends object>(objA: T, objB: U) {
     return Object.assign(objA, objB);
 }
 
 const mergedObj = merge({name: 'Sidney'}, {age: 20});
 
-console.log(mergedObj.name, mergedObj.age);
-console.log(mergedObj);
+// console.log(mergedObj.name, mergedObj.age);
+// console.log(mergedObj);

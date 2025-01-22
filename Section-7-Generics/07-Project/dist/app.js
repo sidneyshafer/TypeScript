@@ -11,10 +11,10 @@ const promise = new Promise((resolve, reject) => {
 promise.then(data => {
     data.split(' ');
 });
-// Creating a Generic Function
+// Creating a Generic Function & Working with constraints
 function merge(objA, objB) {
     return Object.assign(objA, objB);
 }
 const mergedObj = merge({ name: 'Sidney' }, { age: 20 });
-console.log(mergedObj.name, mergedObj.age);
-console.log(mergedObj);
+// console.log(mergedObj.name, mergedObj.age);
+// console.log(mergedObj);
