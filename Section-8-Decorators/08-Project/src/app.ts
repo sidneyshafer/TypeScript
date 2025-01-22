@@ -25,6 +25,7 @@ function Logger(logString: string) {
 
 function WithTemplate(template: string, hookId: string) {
     return function(constructor: any) {
+        console.log('Rendering template...');
         const hookEl = document.getElementById(hookId);
         const p = new constructor();
         if (hookEl) {
@@ -35,7 +36,8 @@ function WithTemplate(template: string, hookId: string) {
 }
 
 // @Logger
-// @Logger('LOGGING - PERSON') // Need to execute with decorator factories
+// Adding Multiple Decorators - runs bottom -> up. WithTemplate executes first, then Logger, and so on.
+@Logger('LOGGING - PERSON') // Need to execute with decorator factories
 @WithTemplate('<h1>My Person Object</h1>', 'app')
 class Person {
     name = 'Sidney';

@@ -29,6 +29,7 @@ function Logger(logString) {
 // }
 function WithTemplate(template, hookId) {
     return function (constructor) {
+        console.log('Rendering template...');
         const hookEl = document.getElementById(hookId);
         const p = new constructor();
         if (hookEl) {
@@ -38,7 +39,7 @@ function WithTemplate(template, hookId) {
     };
 }
 // @Logger
-// @Logger('LOGGING - PERSON') // Need to execute with decorator factories
+// Adding Multiple Decorators
 let Person = class Person {
     constructor() {
         this.name = 'Sidney';
@@ -46,6 +47,8 @@ let Person = class Person {
     }
 };
 Person = __decorate([
+    Logger('LOGGING - PERSON') // Need to execute with decorator factories
+    ,
     WithTemplate('<h1>My Person Object</h1>', 'app')
 ], Person);
 const person = new Person();
