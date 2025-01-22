@@ -62,3 +62,18 @@ textStorage.addItem('Grape');
 const numberStorage = new DataStorage();
 numberStorage.addItem(5);
 numberStorage.addItem(2);
+function createCourseGoal(title, description, date) {
+    let courseGoal = {};
+    courseGoal.title = title;
+    courseGoal.description = description;
+    courseGoal.completeUntil = date;
+    return courseGoal;
+}
+// console.log(createCourseGoal(
+//     'JavaScript Bootcamp 101', 
+//     'A bootcamp for learning JavaScript', 
+//     new Date()
+// ));
+const userNames = ['Sidney', 'Allie'];
+names.push('Lisa');
+console.log(userNames);

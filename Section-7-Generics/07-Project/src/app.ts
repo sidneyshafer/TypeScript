@@ -82,3 +82,28 @@ textStorage.addItem('Grape');
 const numberStorage = new DataStorage<number>();
 numberStorage.addItem(5);
 numberStorage.addItem(2);
+
+// Generic Utility Types
+interface CourseGoal {
+    title: string;
+    description: string;
+    completeUntil: Date;
+}
+
+function createCourseGoal(title: string, description: string, date: Date): CourseGoal {
+    let courseGoal: Partial<CourseGoal> = {};
+    courseGoal.title = title;
+    courseGoal.description = description;
+    courseGoal.completeUntil = date;
+    return courseGoal as CourseGoal;
+}
+
+// console.log(createCourseGoal(
+//     'JavaScript Bootcamp 101', 
+//     'A bootcamp for learning JavaScript', 
+//     new Date()
+// ));
+
+const userNames: Readonly<string[]> = ['Sidney', 'Allie'];
+// names.push('Lisa');
+// console.log(userNames);
