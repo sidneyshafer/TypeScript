@@ -1,15 +1,24 @@
 "use strict";
+// Class Decorators
+// function Logger(target: Function) {
+//     console.log('Logging...');
+//     console.log(target);
+// }
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-// Class Decorator
-function Logger(target) {
-    console.log('Logging...');
-    console.log(target);
+// Working with Decorator Factories
+function Logger(logString) {
+    return function (target) {
+        //console.log('Logging...');
+        console.log(logString);
+        console.log(target);
+    };
 }
+// @Logger
 let Person = class Person {
     constructor() {
         this.name = 'Sidney';
@@ -17,7 +26,7 @@ let Person = class Person {
     }
 };
 Person = __decorate([
-    Logger
+    Logger('LOGGING - PERSON') // Need to execute with decorator factories
 ], Person);
 const person = new Person();
 console.log(person);
