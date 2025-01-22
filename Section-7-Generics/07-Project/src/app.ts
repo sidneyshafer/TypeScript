@@ -1,3 +1,4 @@
+// Built-in Generics
 // const names = ['Sidney', 'Allie'];
 const names: Array<string> = []; // sames as 'string[]'
 // names[0].split(' ');
@@ -11,3 +12,13 @@ const promise: Promise<string> = new Promise((resolve, reject) => {
 promise.then(data => {
     data.split(' ');
 });
+
+// Creating a Generic Function
+function merge<T extends Object, U>(objA: T, objB: U) {
+    return Object.assign(objA, objB);
+}
+
+const mergedObj = merge({name: 'Sidney'}, {age: 20});
+
+console.log(mergedObj.name, mergedObj.age);
+console.log(mergedObj);
