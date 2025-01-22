@@ -25,7 +25,7 @@ function countAndPrint(element) {
     return [element, description];
 }
 // console.log(countAndPrint('Hi there!'));
-console.log(countAndPrint([]));
+// console.log(countAndPrint([]));
 let number;
 number = {
     length: 10
@@ -35,4 +35,30 @@ number = {
 function extractAndConvert(obj, key) {
     return obj[key];
 }
-console.log(extractAndConvert({ name: 'Sidney' }, 'name'));
+// console.log(extractAndConvert({name: 'Sidney'}, 'name'));
+// Generic Classes
+class DataStorage {
+    constructor() {
+        this.data = [];
+    }
+    addItem(item) {
+        this.data.push(item);
+    }
+    removeItem(item) {
+        if (this.data.indexOf(item) === -1) {
+            return;
+        }
+        this.data.splice(this.data.indexOf(item), 1);
+    }
+    getItems() {
+        return [...this.data];
+    }
+}
+const textStorage = new DataStorage();
+textStorage.addItem('Apple');
+textStorage.addItem('Orange');
+textStorage.addItem('Grape');
+// console.log(textStorage.getItems());
+const numberStorage = new DataStorage();
+numberStorage.addItem(5);
+numberStorage.addItem(2);
