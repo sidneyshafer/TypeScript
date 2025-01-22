@@ -18,7 +18,27 @@ function Logger(logString) {
         console.log(target);
     };
 }
+// Building More Decorators
+// function WithTemplate(template: string, hookId: string) {
+//     return function(_: Function) {
+//         const hookEl = document.getElementById(hookId);
+//         if (hookEl) {
+//             hookEl.innerHTML = template;
+//         }
+//     }
+// }
+function WithTemplate(template, hookId) {
+    return function (constructor) {
+        const hookEl = document.getElementById(hookId);
+        const p = new constructor();
+        if (hookEl) {
+            hookEl.innerHTML = template;
+            hookEl.querySelector('h1').textContent = p.name;
+        }
+    };
+}
 // @Logger
+// @Logger('LOGGING - PERSON') // Need to execute with decorator factories
 let Person = class Person {
     constructor() {
         this.name = 'Sidney';
@@ -26,7 +46,7 @@ let Person = class Person {
     }
 };
 Person = __decorate([
-    Logger('LOGGING - PERSON') // Need to execute with decorator factories
+    WithTemplate('<h1>My Person Object</h1>', 'app')
 ], Person);
 const person = new Person();
 console.log(person);
