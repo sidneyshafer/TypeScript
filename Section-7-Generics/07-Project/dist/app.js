@@ -31,3 +31,8 @@ number = {
     length: 10
 };
 //console.log(countAndPrint(number));
+// The "keyOf" constraint
+function extractAndConvert(obj, key) {
+    return obj[key];
+}
+console.log(extractAndConvert({ name: 'Sidney' }, 'name'));

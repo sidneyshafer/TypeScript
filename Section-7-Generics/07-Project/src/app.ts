@@ -37,7 +37,7 @@ function countAndPrint<T extends Lengthy>(element: T): [T, string] {
 }
 
 // console.log(countAndPrint('Hi there!'));
-console.log(countAndPrint([]));
+// console.log(countAndPrint([]));
 
 let number: Lengthy;
 number = {
@@ -45,3 +45,10 @@ number = {
 }
 
 //console.log(countAndPrint(number));
+
+// The "keyOf" constraint
+function extractAndConvert<T extends object, U extends keyof T>(obj: T, key: U) {
+    return obj[key];
+}
+
+// console.log(extractAndConvert({name: 'Sidney'}, 'name'));
