@@ -16,5 +16,18 @@ function merge(objA, objB) {
     return Object.assign(objA, objB);
 }
 const mergedObj = merge({ name: 'Sidney' }, { age: 20 });
-// console.log(mergedObj.name, mergedObj.age);
-// console.log(mergedObj);
+// Another Generic Function
+function countAndPrint(element) {
+    let description = 'Returned no value.';
+    if (element.length > 0) {
+        description = 'Returned ' + element.length + ' elements.';
+    }
+    return [element, description];
+}
+// console.log(countAndPrint('Hi there!'));
+console.log(countAndPrint([]));
+let number;
+number = {
+    length: 10
+};
+//console.log(countAndPrint(number));

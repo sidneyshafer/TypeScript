@@ -22,3 +22,26 @@ const mergedObj = merge({name: 'Sidney'}, {age: 20});
 
 // console.log(mergedObj.name, mergedObj.age);
 // console.log(mergedObj);
+
+interface Lengthy {
+    length: number;
+}
+
+// Another Generic Function
+function countAndPrint<T extends Lengthy>(element: T): [T, string] {
+    let description = 'Returned no value.';
+    if(element.length > 0) {
+        description = 'Returned ' + element.length + ' elements.';
+    }
+    return [element, description];
+}
+
+// console.log(countAndPrint('Hi there!'));
+console.log(countAndPrint([]));
+
+let number: Lengthy;
+number = {
+    length: 10
+}
+
+//console.log(countAndPrint(number));
