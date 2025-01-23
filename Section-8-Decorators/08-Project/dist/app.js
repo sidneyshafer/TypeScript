@@ -126,3 +126,31 @@ __decorate([
     Log3,
     __param(0, Log4)
 ], Product.prototype, "getPriceWithTax", null);
+// Creating an "Autobind" Decorator
+function Autobind(_, _2, descriptor) {
+    const originalMethod = descriptor.value;
+    const adjDescriptor = {
+        configurable: true,
+        enumerable: false,
+        get() {
+            const boundFn = originalMethod.bind(this);
+            return boundFn;
+        },
+    };
+    return adjDescriptor;
+}
+class Print {
+    constructor() {
+        this.message = 'This works!';
+    }
+    showMessage() {
+        console.log(this.message);
+    }
+}
+__decorate([
+    Autobind
+], Print.prototype, "showMessage", null);
+const p = new Print();
+const button = document.querySelector('button');
+// button?.addEventListener('click', p.showMessage.bind(p)); // Common work around using "bind()"
+button === null || button === void 0 ? void 0 : button.addEventListener('click', p.showMessage);

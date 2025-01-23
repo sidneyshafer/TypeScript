@@ -122,3 +122,32 @@ class Product {
         return this.price * (1 + tax);
     }
 }
+
+// Creating an "Autobind" Decorator
+function Autobind(_: any, _2: string | Symbol, descriptor: PropertyDescriptor) {
+    const originalMethod = descriptor.value;
+    const adjDescriptor: PropertyDescriptor = {
+        configurable: true,
+        enumerable: false,
+        get() {
+            const boundFn = originalMethod.bind(this);
+            return boundFn;
+        },
+    };
+    return adjDescriptor;
+}
+
+class Print {
+    message = 'This works!';
+
+    @Autobind
+    showMessage() {
+        console.log(this.message);
+    }
+}
+
+const p = new Print();
+
+const button = document.querySelector('button');
+// button?.addEventListener('click', p.showMessage.bind(p)); // Common work around using "bind()"
+button?.addEventListener('click', p.showMessage);
