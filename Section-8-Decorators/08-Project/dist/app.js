@@ -39,7 +39,7 @@ function WithTemplate(template, hookId) {
     };
 }
 // @Logger
-// Adding Multiple Decorators
+// Adding Multiple Decorators - runs bottom -> up. WithTemplate executes first, then Logger, and so on.
 let Person = class Person {
     constructor() {
         this.name = 'Sidney';
@@ -52,4 +52,29 @@ Person = __decorate([
     WithTemplate('<h1>My Person Object</h1>', 'app')
 ], Person);
 const person = new Person();
-console.log(person);
+// console.log(person);
+// Diving into Property Decorators
+function Log(target, propertyName) {
+    console.log('Property Decorator');
+    console.log(target, propertyName);
+}
+class Product {
+    set price(val) {
+        if (val > 0) {
+            this._price = val;
+        }
+        else {
+            throw new Error('Invalid number assignment. Price should be positive.');
+        }
+    }
+    constructor(t, p) {
+        this.title = t;
+        this._price = p;
+    }
+    getPriceWithTax(tax) {
+        return this.price * (1 + tax);
+    }
+}
+__decorate([
+    Log
+], Product.prototype, "title", void 0);
