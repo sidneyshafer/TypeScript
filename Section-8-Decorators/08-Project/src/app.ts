@@ -50,10 +50,34 @@ class Person {
 const person = new Person();
 // console.log(person);
 
-// Diving into Property Decorators
+// Diving into Property Decorators - receives 2 arguments
 function Log(target: any, propertyName: string) {
     console.log('Property Decorator');
     console.log(target, propertyName);
+}
+
+// Working with Accessor Decorators - receives 3 arguments
+function Log2(target: any, name: string, descriptor: PropertyDescriptor) {
+    console.log('Accessor Decorator');
+    console.log(target);
+    console.log(name);
+    console.log(descriptor);
+}
+
+// Working with Method Decorators - receives 3 arguments
+function Log3(target: any, name: string | Symbol, descriptor: PropertyDescriptor) {
+    console.log('Method Decorator');
+    console.log(target);
+    console.log(name);
+    console.log(descriptor);
+}
+
+// Working with Parameter Decorators - receives 3 arguments
+function Log4(target: any, name: string | Symbol, position: number) {
+    console.log('Parameter Decorator');
+    console.log(target);
+    console.log(name);
+    console.log(position);
 }
 
 class Product {
@@ -61,6 +85,7 @@ class Product {
     title: string;
     private _price: number;
 
+    @Log2
     set price(val: number) {
         if(val > 0) {
             this._price = val;
@@ -74,7 +99,8 @@ class Product {
         this._price = p;
     }
 
-    getPriceWithTax(tax: number) {
+    @Log3
+    getPriceWithTax(@Log4 tax: number) {
         return this.price * (1 + tax);
     }
 }
