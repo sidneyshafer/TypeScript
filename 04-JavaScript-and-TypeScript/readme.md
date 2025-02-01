@@ -1,6 +1,8 @@
-# Section 4 - JavaScript & TypeScript
+## JavaScript & TypeScript
 
-## JavaScript - Declaring Variables
+* [Declaring JavaScript Variables](#declaring-javascript-variables)
+
+### Declaring JavaScript Variables
 
 In JavaScript, `var`, `let`, and `const` are used to declare variables, but they differ in their scope and reassignment behavior.
 
@@ -17,3 +19,6 @@ In JavaScript, `var`, `let`, and `const` are used to declare variables, but they
 **const**
 * The variable is only accessible within the block it's declared in (block-scoped).
 * Variable cannot be reassigned or changed.
+
+<kbd> <br> [Back to Top](#javascript--typescript) <br> </kbd>
+---

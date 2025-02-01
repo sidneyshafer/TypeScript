@@ -1,6 +1,9 @@
-# Section 2 - TypeScript Basics
+## TypeScript Basics
 
-## Core Types
+* [Core Types](#core-types)
+
+### Core Types
+
 | Type | Example | Description |
 | ---- | ------- | ----------- |
 | number | 1, 5.3, -10 | All numbers, no differentiation between integers or floats |
@@ -12,17 +15,5 @@
 | Enum | enum {NEW, OLD} | Added by TypeScript: Automatically enumerated global constant identifiers |
 | Any | * | Any kind of value, no specific type assignment |
 
-## Installing Dependencies
-
-```
-npm install
-```
-
-## Compiling TypeScript
-
-* Compiling a single TypeScript file.
-```
-tsc app.ts
-```
-
-* More on TypeScript compiler in [Section 3 - TypeScript Compiler](https://github.com/sidneyshafer/TypeScript/tree/main/Section-3-TypeScript-Compiler).
+<kbd> <br> [Back to Top](#typescript-basics) <br> </kbd>
+---

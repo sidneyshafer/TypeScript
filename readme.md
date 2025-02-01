@@ -1,6 +1,23 @@
-# Understanding TypeScript
+# Table of Contents
 
-## :link: [Default Project Setup](https://github.com/sidneyshafer/TypeScript/tree/main/Default-Project-Setup)
+* **[Default Project Setup](#default-project-setup)**
+* **[Getting Started with TypeScript](#getting-started-with-typescript)**
+* **[TypeScript Basics](#typescript-basics)**
+* **[TypeScript Compiler](#typescript-compiler)**
+* **[JavaScript and TypeScript](#javascript--typescript)**
+* **[Classes and Interfaces](#classes-and-interfaces)**
+* **[Advanced Type Concepts](#advanced-type-concepts)**
+* **[Generics](#generics)**
+* **[Decorators](#decorators)**
+* **[Resources](#resources)**
+
+## Default Project Setup
+
+* [Configuring Project Dependencies](#configuring-project-dependencies)
+* [Compiling TypeScript](#compiling-typescript)
+
+> [!NOTE]
+> All examples in this section can be found in :file_folder: [Default Project Setup](/00-Default-Project-Setup)
 
 ### Configuring Project Dependencies
 
@@ -22,21 +39,45 @@ npm install --save-dev lite-server
 "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server"
+    ...
 }
 ```
+* Start the lite development server:
+```
+npm start
+```
 
-* **package.json** is already configured. Conversely, just run `npm install` with package.json in project folder.
+* **package.json** is already configured. Conversely, just run `npm install` with `package.json` in project folder.
 
 ### Compiling TypeScript
 
-* Compiling a single TypeScript file.
+Compile a single TypeScript file:
 ```
 tsc app.ts
 ```
 
-* More on TypeScript compiler in **[Section 3 - TypeScript Compiler](https://github.com/sidneyshafer/TypeScript/tree/main/Section-3-TypeScript-Compiler)**.
+Compile all TypeScript files in project:
+```
+tsc
+```
 
-## :link: [Section 1 - Getting Started with TypeScript](https://github.com/sidneyshafer/TypeScript/tree/main/Section-1-Getting-Started)
+Starting TypeScript compilation in watch mode:
+```
+tsc -w
+```
+
+> [!TIP]
+> More on the TypeScript compiler in [TypeScript Compiler](#typescript-compiler).
+
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+---
+
+## Getting Started with TypeScript
+
+* [What is TypeScript?](#what-is-typescript)
+
+> [!NOTE]
+> All examples in this section can be found in :file_folder: [Getting Started](/01-Getting-Started)
 
 ### What is TypeScript?
 
@@ -48,9 +89,18 @@ tsc app.ts
 * TypeScript code is compiled to JavaScript code.
 * Features are compiled to JS "workarounds", possible errors are thrown.
 
-## :link: [Section 2 - TypeScript Basics](https://github.com/sidneyshafer/TypeScript/tree/main/Section-2-TypeScript-Basics)
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+---
+
+## TypeScript Basics
+
+* [Core Types](#core-types)
+
+> [!NOTE]
+> All examples in this section can be found in :file_folder: [TypeScript Basics](/02-TypeScript-Basics)
 
 ### Core Types
+
 | Type | Example | Description |
 | ---- | ------- | ----------- |
 | number | 1, 5.3, -10 | All numbers, no differentiation between integers or floats |
@@ -62,29 +112,26 @@ tsc app.ts
 | Enum | enum {NEW, OLD} | Added by TypeScript: Automatically enumerated global constant identifiers |
 | Any | * | Any kind of value, no specific type assignment |
 
-### Installing Dependencies
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+---
 
-```
-npm install
-```
+## TypeScript Compiler
 
-### Compiling TypeScript
+* [Manually Compile](#manually-compile)
+* [Using Watch Mode](#using-watch-mode)
+* [Compile Entire Project](#compile-entire-project--multiple-files)
+* [TypeScript Config File](#typescript-config-file)
 
-* Compiling a single TypeScript file.
-```
-tsc app.ts
-```
-
-* More on TypeScript compiler in **[Section 3 - TypeScript Compiler](https://github.com/sidneyshafer/TypeScript/tree/main/Section-3-TypeScript-Compiler)**.
-
-## :link: [Section 3 - TypeScript Compiler](https://github.com/sidneyshafer/TypeScript/tree/main/Section-3-TypeScript-Compiler)
+> [!NOTE]
+> All examples in this section can be found in :file_folder: [TypeScript Basics](/03-TypeScript-Compiler)
 
 ### Manually Compile
 
-* Compile a single TypeScript file.
+Compile a single TypeScript file:
 ```
 tsc app.ts
 ```
+* Will compile the `app.ts` file.
 
 ### Using "Watch Mode"
 
@@ -96,9 +143,10 @@ tsc app.ts --watch | --w
 ### Compile Entire Project / Multiple Files
 
 * Define entire project to TypeScript.
-* Following command is only required once.
+* Following command is required only once in project.
 ```
 tsc --init
+tsc
 ```
 * Creates `tsconfig.json` file.
 * Only have to run `tsc` command to compile all `.ts` files TypeScript can find in the given project.
@@ -141,9 +189,17 @@ tsc --init
 "noEmitOnError": true
 ```
 
-## :link: [Section 4 - JavaScript & TypeScript](https://github.com/sidneyshafer/TypeScript/tree/main/Section-4-JavaScript-and-TypeScript)
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+---
 
-### JavaScript - Declaring Variables
+## JavaScript & TypeScript
+
+* [Declaring JavaScript Variables](#declaring-javascript-variables)
+
+> [!NOTE]
+> All examples in this section can be found in :file_folder: [JavaScript and TypeScript](/04-JavaScript-and-TypeScript)
+
+### Declaring JavaScript Variables
 
 In JavaScript, `var`, `let`, and `const` are used to declare variables, but they differ in their scope and reassignment behavior.
 
@@ -161,7 +217,15 @@ In JavaScript, `var`, `let`, and `const` are used to declare variables, but they
 * The variable is only accessible within the block it's declared in (block-scoped).
 * Variable cannot be reassigned or changed.
 
-## :link: [Section 5 - Classes and Interfaces](https://github.com/sidneyshafer/TypeScript/tree/main/Section-5-Classes-and-Interfaces)
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+---
+
+## Classes and Interfaces
+
+* [What is Object Oriented Programming?](#what-is-object-oriented-programming-oop)
+
+> [!NOTE]
+> All examples in this section can be found in :file_folder: [Classes and Interfaces](/05-Classes-and-Interfaces)
 
 ### What is Object Oriented Programming (OOP)?
 * Work with (real-life) entities in your code.
@@ -174,9 +238,17 @@ In JavaScript, `var`, `let`, and `const` are used to declare variables, but they
     * Define how objects look like, which properties and methods they have.
     * Classes make creation of multiple, similar objects much easier.
 
-## :link: [Section 6 - Advanced Type Concepts](https://github.com/sidneyshafer/TypeScript/tree/main/Section-6-Advanced-Type-Concepts)
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+---
 
-### Concepts
+## Advanced Type Concepts
+
+* [All Type Concepts](#all-type-concepts)
+
+> [!NOTE]
+> All examples in this section can be found in :file_folder: [Advanced Type Concepts](/06-Advanced-Type-Concepts)
+
+### All Type Concepts
 
 * Intersection Types
 * Type Guards
@@ -187,11 +259,24 @@ In JavaScript, `var`, `let`, and `const` are used to declare variables, but they
 * Optional Chaining
 * Nullish Coalescing
 
-## :link: [Section 7 - Generics](https://github.com/sidneyshafer/TypeScript/tree/main/Section-7-Generics)
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+---
 
-In TypeScript, generics allow you to write reusable code that can work with a variety of types. More information on generics can be found on the **:link: [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/2/generics.html)**.
+## Generics
 
-### Concepts Include:
+* [Generics Overview](#generics-overview)
+* [All Generic Concepts](#all-generic-concepts)
+
+> [!NOTE]
+> All examples in this section can be found in :file_folder: [Generics](/07-Generics)
+
+### Generics Overview
+
+In TypeScript, generics allow you to write reusable code that can work with a variety of types. 
+
+:bulb: More information on generics can be found on the **:link: [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/2/generics.html)**.
+
+### All Generic Concepts
 
 * Built-in Generics
 * Creating a Generic Function
@@ -201,10 +286,18 @@ In TypeScript, generics allow you to write reusable code that can work with a va
 * Generic Classes
 * Generic Utility Types
 
-## :link: [Section 8 - Decorators](https://github.com/sidneyshafer/TypeScript/tree/main/Section-8-Decorators)
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+---
 
-### `tsconfig` file
-* In the `tsconfig.json` file, make sure `experimentalDecorators` is set to `true`.
+## Decorators
+
+* [What are TypeScript Decorators?](#what-are-typescript-decorators)
+* [When do Decorators Execute?](#when-do-decorators-execute)
+* [Configuration for Using Decorators](#configuration-for-using-decorators)
+* [All Decorator Concepts](#all-decorator-concepts)
+
+> [!NOTE]
+> All examples in this section can be found in :file_folder: [Decorators](/08-Decorators)
 
 ### What are TypeScript Decorators?
 * Decorators provide a way to add both annotations and a meta-programming syntax for class declarations and members.
@@ -215,7 +308,10 @@ In TypeScript, generics allow you to write reusable code that can work with a va
 * Decorators execute during the compilation process, not at runtime like regular functions.
 * A property decorator executes early - when the class is defined. You don't need to construct an instance, or access the property.
 
-### Concepts Include
+### Configuration for Using Decorators
+* In the `tsconfig.json` file, make sure `experimentalDecorators` is set to `true`.
+
+### All Decorator Concepts
 * Class Decorators
 * Working with Decorator Factories
 * Building More Decorator Examples
@@ -225,5 +321,11 @@ In TypeScript, generics allow you to write reusable code that can work with a va
 * Example Creating an "Autobind" Decorator
 * Example Validation with Decorators
 
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+---
+
 ### Resources
 * [TypeScript Decorators Documentation](https://www.typescriptlang.org/docs/handbook/decorators.html).
+
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+---
