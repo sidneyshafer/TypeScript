@@ -14,14 +14,17 @@
         <div class="form-control">
           <label for="title">Title</label>
           <input type="text" id="title" />
+          <small class="error" id="title-error"></small>
         </div>
         <div class="form-control">
           <label for="description">Description</label>
           <textarea id="description" rows="3"></textarea>
+          <small class="error" id="description-error"></small>
         </div>
         <div class="form-control">
           <label for="people">People</label>
           <input type="number" id="people" step="1" min="0" max="10" />
+          <small class="error" id="people-error"></small>
         </div>
         <button type="submit">ADD PROJECT</button>
       </form>
