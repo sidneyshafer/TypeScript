@@ -60,6 +60,34 @@ function validate(validateInput: Validate): [boolean, string] {
     return [isValid, errorStr];
 }
 
+class ProjectList {
+    templateEl: HTMLTemplateElement;
+    hostEl: HTMLDivElement;
+    element: HTMLElement;
+
+    constructor(private type: 'active' | 'finished') {
+        this.templateEl = document.getElementById('project-list')! as HTMLTemplateElement;
+        this.hostEl = document.getElementById('app')! as HTMLDivElement;
+
+        const importedNode = document.importNode(this.templateEl.content, true);
+        this.element = importedNode.firstElementChild as HTMLElement;
+        this.element.id = `${this.type}-projects`;
+
+        this.attach();
+        this.renderContent();
+    }
+
+    private renderContent() {
+        const listId = `${this.type}-project-list`;
+        this.element.querySelector('ul')!.id = listId;
+        this.element.querySelector('h2')!.textContent = this.type.toUpperCase() + ' PROJECTS';
+    }
+
+    private attach() {
+        this.hostEl.insertAdjacentElement('beforeend', this.element);
+    }
+}
+
 // ProjectInput Class
 class ProjectInput {
     templateEl: HTMLTemplateElement;
@@ -173,3 +201,5 @@ class ProjectInput {
 }
 
 const projectInput  = new ProjectInput();
+const activeProjectList = new ProjectList('active');
+const finishedProjectList = new ProjectList('finished');
