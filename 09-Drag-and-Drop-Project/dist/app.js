@@ -13,6 +13,21 @@ function autobind(_: any, _2: string, descriptor: PropertyDescriptor) {
     return adjDescriptor;
 }
 */
+// Project Type - Using Class & Enum
+var ProjectStatus;
+(function (ProjectStatus) {
+    ProjectStatus[ProjectStatus["Active"] = 0] = "Active";
+    ProjectStatus[ProjectStatus["Finished"] = 1] = "Finished";
+})(ProjectStatus || (ProjectStatus = {}));
+class Project {
+    constructor(id, title, description, people, status) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.people = people;
+        this.status = status;
+    }
+}
 // Project State Management
 class ProjectState {
     constructor() {
@@ -30,12 +45,13 @@ class ProjectState {
         this.listeners.push(listenerFn);
     }
     addProject(title, description, numbOfPeople) {
-        const newProject = {
-            id: Math.random.toString(),
-            title: title,
-            description: description,
-            people: numbOfPeople
-        };
+        // const newProject = {
+        //     id :Math.random.toString(),
+        //     title: title,
+        //     description: description,
+        //     people: numbOfPeople
+        // };
+        const newProject = new Project(Math.random.toString(), title, description, numbOfPeople, ProjectStatus.Active);
         this.projects.push(newProject);
         for (const listenerFn of this.listeners) {
             listenerFn(this.projects.slice());
