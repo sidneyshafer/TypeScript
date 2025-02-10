@@ -13,6 +13,17 @@ function autobind(_: any, _2: string, descriptor: PropertyDescriptor) {
 }
 */
 
+// Drag & Drop Interfaces
+interface Draggable {
+    dragStartHandler(event: DragEvent): void;
+    dragEndHandler(event: DragEvent): void;
+}
+interface DragTarget {
+    dragOverHandler(event: DragEvent): void;
+    dropHandler(event: DragEvent): void;
+    dragLeaveHandler(event: DragEvent): void;
+}
+
 // Project Type - Using Class & Enum
 enum ProjectStatus { Active, Finished }
 
@@ -171,7 +182,7 @@ abstract class Component<T extends HTMLElement, U extends HTMLElement> {
 }
 
 // ProjectItem Class
-class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> {
+class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> implements Draggable {
     private project: Project;
 
     get persons() {
@@ -190,7 +201,17 @@ class ProjectItem extends Component<HTMLUListElement, HTMLLIElement> {
         this.renderContent();
     }
 
-    configure(): void {}
+    dragStartHandler(event: DragEvent): void {
+        console.log(event);
+    }
+    dragEndHandler(_: DragEvent): void {
+        console.log('DragEnd');
+    }
+
+    configure(): void {
+        this.element.addEventListener('dragstart', this.dragStartHandler.bind(this));
+        this.element.addEventListener('dragend', this.dragEndHandler.bind(this));
+    }
 
     renderContent(): void {
         this.element.querySelector('h2')!.textContent = this.project.title;
