@@ -19,6 +19,11 @@ body {
   background-color: #979dac;
 }
 
+h1 {
+  color: #FFF;
+  text-transform: uppercase;
+}
+
 label,
 input,
 textarea {
