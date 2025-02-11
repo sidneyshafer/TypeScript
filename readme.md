@@ -324,6 +324,23 @@ In TypeScript, generics allow you to write reusable code that can work with a va
 <kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
 ---
 
+## Modules & Namespaces
+
+### Writing Modular Code
+* Splitting your code into modules
+* Multiple options to organize code in multiple files
+
+### Splitting Code Into Multiple Files
+
+1. **Namespace & File Bundling**
+    * Use "namespace" code syntax to group code
+    * Per-file or bundled compilation is possible (less imports to manage)
+
+2. **ES6 Imports/Exports**
+    * Use ES6 import/export syntax
+    * Per-file complication but only single `<script>` import
+    * Bundling via third-party tools (e.g. Webpack) is possible
+
 ### Resources
 * [TypeScript Decorators Documentation](https://www.typescriptlang.org/docs/handbook/decorators.html).
 
