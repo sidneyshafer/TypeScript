@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  font-family: 'Raleway', serif;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #979dac;
+}
+
+h1 {
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+label {
+  font-weight: bold;
+  font-family: inherit;
+}
+
+input,
+textarea {
+  font: inherit;
+  padding: 0.2rem 0.4rem;
+  width: 100%;
+  max-width: 30rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 4px 6px -5px;
+}
+
+button {
+  text-transform: lowercase;
+  font: inherit;
+  background: #5c677d;
+  border: 1px solid #5c677d;
+  border-radius: 30px;
+  cursor: pointer;
+  color: white;
+  padding: 0.75rem 1rem;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover,
+button:active {
+  background: #7d8597;
+  border-color: #7d8597;
+}
+
+#app {
+  width: 50rem;
+  background-color: #5c677d;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 4px 6px -5px;
+}
+
+.projects {
+  margin: 1rem;
+  border: 1px solid #001233;
+}
+
+.projects header {
+  background: #001233;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#finished-projects {
+  border-color: #051923;
+}
+
+#finished-projects header {
+  background: #051923;
+}
+
+.projects h2 {
+  margin: 0;
+  color: white;
+}
+
+.projects ul {
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+}
+
+.projects li {
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 4px 6px -5px;
+  background-color: #FFF;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.projects li h2 {
+  color: #001233;
+  margin: 0.5rem 0;
+}
+
+#finished-projects li h2 {
+  color: #051923;
+}
+
+.projects li h3 {
+  color: #333;
+  font-size: 1rem;
+}
+
+.project li p {
+  margin: 0;
+}
+
+.droppable {
+  background: #FFF;
+}
+
+#finished-projects .droppable {
+  background: #FFF;
+}
+
+#user-input {
+  margin: 1rem;
+  padding: 1rem;
+  /* border: 1px solid #ff0062; */
+  background-color: #33415c;
+  color: #FFF;
+}
+
+.form-control {
+  margin-bottom: 20px;
+}
+
+small {
+  color: #33415c;
+}
