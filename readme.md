@@ -10,6 +10,7 @@
 * **[Generics](#generics)**
 * **[Decorators](#decorators)**
 * **[Modules & Namespaces](#modules--namespaces)**
+* **[TypeScript & Webpack](#typescript--webpack)**
 * **[Resources](#resources)**
 
 ## Default Project Setup
@@ -359,6 +360,148 @@ In TypeScript, generics allow you to write reusable code that can work with a va
 * Code bundles, less imports required
 * Optimized (minified) code, less code to download
 * More build steps can be easily added
+
+### Configuring Webpack Development Environment
+
+Run the following commands to install Webpack in the project:
+```
+npm install --save-dev webpack webpack-cli webpack-dev-server typescript ts-loader
+```
+
+Create a `webpack.config.js` file and add the following configuration:
+```js
+const path = require('path');
+
+module.exports = {
+    entry: './src/app.ts',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    },
+    devtool: 'inline-source-map',
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            }
+        ]
+    },
+    resolve: {
+        extensions: ['.ts', '.js']
+    }
+};
+```
+
+Update this scripts in `package.json` to run Webpack and bundle all files:
+```
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server",
+    "build": "webpack"
+}
+```
+
+Adjust `webpack.config.js` to use webpack-dev-server:
+```js
+const path = require('path');
+
+module.exports = {
+    mode: 'development',
+    entry: './src/app.ts',
+    devServer: {
+        static: [
+            {
+                directory: path.join(__dirname),
+            },
+        ],
+    },
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/dist/',
+    },
+    devtool: 'inline-source-map',
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            }
+        ]
+    },
+    resolve: {
+        extensions: ['.ts', '.js']
+    }
+};
+```
+Update the start script in `package.json` to run webpack-dev-server:
+```
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "build": "webpack"
+}
+```
+
+### Configuring Webpack for Production
+
+Add production workflow by creating a new Webpack configuration file: `webpack.config.prod.js`.
+
+Install Webpack plugin for cleaning `dist` folder before re-building project:
+```
+npm install --save-dev clean-webpack-plugin
+```
+
+Import clean plugin in the `webpack.config.prod.js` file:
+```js
+const CleanPlugin = require('clean-webpack-plugin');
+```
+
+Instantiate the plugin:
+```js
+plugins: [
+    new CleanPlugin.CleanWebpackPlugin()
+]
+```
+
+How the final `webpack.config.prod.js` file looks:
+```js
+const path = require('path');
+const CleanPlugin = require('clean-webpack-plugin');
+
+module.exports = {
+    mode: 'production',
+    entry: './src/app.ts',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
+    devtool: 'none',
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+        ],
+    },
+    resolve: {
+        extensions: ['.ts', '.js'],
+    },
+    plugins: [
+        new CleanPlugin.CleanWebpackPlugin()
+    ],
+};
+```
+
+Update `package.json` to use webpack production file during the build process:
+```
+"build": "webpack --config webpack.config.prod.js"
+```
 
 ### Resources
 * [TypeScript Decorators Documentation](https://www.typescriptlang.org/docs/handbook/decorators.html).
