@@ -9,6 +9,7 @@
 * **[Advanced Type Concepts](#advanced-type-concepts)**
 * **[Generics](#generics)**
 * **[Decorators](#decorators)**
+* **[Modules & Namespaces](#modules--namespaces)**
 * **[Resources](#resources)**
 
 ## Default Project Setup
@@ -340,6 +341,24 @@ In TypeScript, generics allow you to write reusable code that can work with a va
     * Use ES6 import/export syntax
     * Per-file complication but only single `<script>` import
     * Bundling via third-party tools (e.g. Webpack) is possible
+
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+---
+
+## TypeScript & Webpack
+
+### What is Webpack?
+* Webpack is a bundling and build orchestration tool
+
+**Current Project Setup:**
+* Multiple `.ts` files and imports (multiple HTTP requests)
+* Unoptimized code (not as small as possible)
+* "External" development server needed (lite-server)
+
+**With Webpack:**
+* Code bundles, less imports required
+* Optimized (minified) code, less code to download
+* More build steps can be easily added
 
 ### Resources
 * [TypeScript Decorators Documentation](https://www.typescriptlang.org/docs/handbook/decorators.html).
