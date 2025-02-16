@@ -11,6 +11,7 @@
 * **[Decorators](#decorators)**
 * **[Modules & Namespaces](#modules--namespaces)**
 * **[TypeScript & Webpack](#typescript--webpack)**
+* **[Working with 3rd Party Libraries](#working-with-3rd-party-libraries)**
 * **[Resources](#resources)**
 
 ## Default Project Setup
@@ -501,6 +502,27 @@ module.exports = {
 Update `package.json` to use webpack production file during the build process:
 ```
 "build": "webpack --config webpack.config.prod.js"
+```
+
+---
+
+### Working with 3rd Party Libraries
+
+#### Installing Lodash
+```
+npm i --save lodash
+npm install --save-dev @types/lodash
+```
+
+#### Using Class Transformer
+```
+npm install class-transformer --save
+npm install reflect-metadata --save
+```
+
+### Using Class Validator
+```
+npm install class-validator --save
 ```
 
 ### Resources
