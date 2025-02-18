@@ -11,6 +11,7 @@
 * **[Decorators](#decorators)**
 * **[Modules & Namespaces](#modules--namespaces)**
 * **[TypeScript & Webpack](#typescript--webpack)**
+* **[React & TypeScript](#react--typescript)**
 * **[Working with 3rd Party Libraries](#working-with-3rd-party-libraries)**
 * **[Resources](#resources)**
 
@@ -504,29 +505,41 @@ Update `package.json` to use webpack production file during the build process:
 "build": "webpack --config webpack.config.prod.js"
 ```
 
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
 ---
 
-### Working with 3rd Party Libraries
+## Working with 3rd Party Libraries
 
-#### Installing Lodash
+### Installing Lodash
 ```
 npm i --save lodash
 npm install --save-dev @types/lodash
 ```
 
-#### Using Class Transformer
+### Using Class Transformer
 ```
 npm install class-transformer --save
 npm install reflect-metadata --save
 ```
 
-### Using Class Validator
+## Using Class Validator
 ```
 npm install class-validator --save
 ```
 
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+---
+
+## React & TypeScript
+
+### Setting Up React & TypeScript Project
+```
+npx create-react-app app-name --template typescript
+```
+
 ### Resources
 * [TypeScript Decorators Documentation](https://www.typescriptlang.org/docs/handbook/decorators.html).
+* [React Documentation for Working with TypeScript](https://react.dev/learn/typescript)
 
 <kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
 ---
