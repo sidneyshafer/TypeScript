@@ -12,6 +12,7 @@
 * **[Modules & Namespaces](#modules--namespaces)**
 * **[TypeScript & Webpack](#typescript--webpack)**
 * **[React & TypeScript](#react--typescript)**
+* **[Node.js + Express & TypeScript]()**
 * **[Working with 3rd Party Libraries](#working-with-3rd-party-libraries)**
 * **[Resources](#resources)**
 
@@ -536,6 +537,28 @@ npm install class-validator --save
 ```
 npx create-react-app app-name --template typescript
 ```
+
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+
+---
+
+## Node.js + Express & TypeScript
+
+### Setting up a Project
+```
+npm init
+tsc --init
+
+npm install --save express body-parser
+
+npm install --save-dev nodemon
+npm install --save-dev @types/node
+npm install --save-dev @types/express
+```
+
+<kbd> <br> [Back to Top](#table-of-contents) <br> </kbd>
+
+---
 
 ### Resources
 * [TypeScript Decorators Documentation](https://www.typescriptlang.org/docs/handbook/decorators.html).
